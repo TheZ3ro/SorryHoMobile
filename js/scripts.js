@@ -5,15 +5,15 @@ var fontImage = null
 var fontInfo = null
 var overlayNames = null
 var overlayOverrides = null
-var selectedGenerator = 'cyberpunk'
+var selectedGenerator = 'ho'
 var glitch = false
 
 var generators={
-	'cyberpunk':{
-		'title': 'Cyberpunk 2077',
-		'source':'CD Projekt Red',
-		'sourceurl':'https://en.wikipedia.org/wiki/CD_Projekt#CD_Projekt_Red',
-		'defaulttext':"[bold]Dear gamers,[/bold]\n\nFirst of all, we would like to start by apologizing to you for not showing the game on base last-gen consoles before it premiered and, in\nconsequence, not allowing you to make a more informed decision about your purchase. We should have paid more attention to making it play\nbetter on PlayStation 4 and Xbox One.\n\nSecond, we will fix bugs and crashes, and improve the overall experience. The first round of updates has just been released and the next\none is coming within the next 7 days. Expect more, as we will update frequently whenever no improvements are ready. After the holidays,\nwe'll continue working — we'll release two large patches starting with Patch #1 in January. This will be followed by Patch #2 in February.\nTogether these should fix the most prominent problems gamers are facing on last-gen consoles. We will be informing you about the\ncontents of each patch ahead of their release. They won't make the game on last-gen look like it's running on a high-spec PC or next-gen\nconsole, but it will be closer to that experience than it is now.\n\nFinally, we would always like everyone who buys our games to be satisfied with their purchase. We would appreciate it if you would give us a\nchance, but if you are not pleased with the game on your console and don't want to wait for updates, you can opt to refund your copy. For\ncopies purchased digitally, please use the refund system of PSN or Xbox respectively. For boxed versions, please first try to get a refund at\nthe store where you bought the game. Should this not be possible, please contact us at helpmerefund@cdprojectred.com and we will do our\nbest to help you. Starting from today, you can contact us for a week up until December 21st, 2020."
+	'ho':{
+		'title': 'Ho. Mobile',
+		'source':'Ho. Mobile',
+		'sourceurl':'https://it.wikipedia.org/wiki/Ho.',
+		'defaulttext':"[bold]HO. MOBILE DENUNCIA ATTIVITA' ILLECITA DI IGNOTI\nSU DATI DI UNA PARTE DELLA PROPRIA BASE CLIENTI[/bold]\n\nNessuna sottrazione di dati di traffico,\nnè bancari o relativi a sistemi di pagamento\n\nInnalzati i livelli di sicurezza\n\nStretta collaborazione con le autorità inquirenti\n\nCOVID-19 ha intensificato i crimini informatici"
 	}
 }
 
@@ -575,8 +575,8 @@ function selectGenerator(){
 	loadJSONForGenerator()
 	$('.source').remove();
 
-	baseImage = $('<img id="template" class="source" />').attr('src', 'cyberpunk-blank.jpeg').appendTo('body')[0]
-	fontImage = $('<img id="font" class="source" />').attr('src', 'cyberpunk-font.png').appendTo('body')[0]
+	baseImage = $('<img id="template" class="source" />').attr('src', 'blank.jpeg').appendTo('body')[0]
+	fontImage = $('<img id="font" class="source" />').attr('src', 'font.png').appendTo('body')[0]
 
 	baseImage = null
 	$('.source').waitForImages(true).done(function(){
@@ -1004,7 +1004,7 @@ function resetOverlays(){
 
 function loadJSONForGenerator(){
 
-	$.getJSON("cyberpunk.json",function(data){
+	$.getJSON("ho.json",function(data){
 		fontInfo = data
 		resetOverlays()
 		$('.wordwrap').toggle('wrap-width' in fontInfo)
